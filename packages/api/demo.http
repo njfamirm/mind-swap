@@ -1,10 +1,27 @@
-@apiUrl = https://alwatr.ir/api/v0
+@apiUrl = http://localhost:8000/api/v0
 
 # Alwatr Admin User
 @userId = user_id
-@userToken = user_token
-
-@clientId = 2b6861f4-a8d7-4065-a5a5-3caa54b71a20
+@conversationId = chatcmpl-8cfViNwSJVh7iJcl85Ewle4DfBCBM
 
 ### api home
 GET {{apiUrl}}/
+
+### Create new conversation
+PUT {{apiUrl}}/conversation?userId={{userId}}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Can you speak english?"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "How cna create openAI chatbot?"
+}
