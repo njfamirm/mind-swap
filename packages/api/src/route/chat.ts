@@ -3,8 +3,7 @@ import {Region} from '@alwatr/store-engine';
 import {chat} from '../lib/openai-api';
 import {nanoServer} from '../lib/server';
 import {store} from '../lib/store';
-import {handleToolCall} from '../lib/tool-handler';
-import {chatToolList} from '../lib/tools';
+import {addNote, chatToolList, getNoteList} from '../lib/tools';
 
 import type {AlwatrServiceResponse, StringifyableRecord} from '@alwatr/type';
 import type {ChatCompletionMessageParam} from 'openai/resources/index';
@@ -18,8 +17,8 @@ import type {ChatCompletionMessageParam} from 'openai/resources/index';
  * 4. If AI message is tool call, handle them.
  *   4.1. send call content to AI and append AI message to conversation.
  *
- * @param bodyJson last message from conversation.
- * @param searchParams user id.
+ * @param bodyJson user message
+ * @param searchParams user id
  *
  * @returns message and role.
  */
@@ -55,9 +54,16 @@ nanoServer.route<StringifyableRecord>('PATCH', '/chat', async (connection): Prom
       const argument = JSON.parse(toolCall.function.arguments);
       const functionName = toolCall.function.name;
 
-      let callContent;
+      let callContent = '';
       try {
-        callContent = await handleToolCall(functionName, argument);
+        if (functionName === 'add_note') {
+          await addNote(param.userId, argument.note);
+          callContent = 'successfully added';
+        }
+        else if (functionName === 'get_note_list') {
+          const list = await getNoteList(param.userId);
+          callContent = 'this is list of notes: ' + JSON.stringify(list);
+        }
       }
       catch (error) {
         callContent = 'Error occurred: ' + JSON.stringify(error);
