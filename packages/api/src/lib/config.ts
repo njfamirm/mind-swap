@@ -4,12 +4,6 @@ definePackage('mind-swap-api', '0.x');
 
 export const logger = createLogger('mind-swap-api');
 
-if (process.env.NODE_ENV === 'production') {
-  if (process.env.STORAGE_TOKEN == null) {
-    throw new Error('STORAGE_TOKEN is required in production');
-  }
-}
-
 export const config = {
   storeEngine: {
     rootPath: './db',

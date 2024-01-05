@@ -17,5 +17,6 @@ export async function chat(messages: ChatCompletionMessageParam[], model: Model,
     tools,
     tool_choice: tools !== undefined ? 'auto' : undefined,
   });
+
   return completion;
 }
