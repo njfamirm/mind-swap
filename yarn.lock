@@ -289,6 +289,7 @@ __metadata:
     "@alwatr/store-engine": "npm:^5.0.0-beta"
     "@alwatr/tsconfig-base": "npm:^1.0.5"
     "@alwatr/type": "npm:^1.2.4"
+    "@alwatr/type-helper": "npm:^1.0.3"
     "@alwatr/util": "npm:^1.4.1"
     "@types/node": "npm:^20.10.5"
     esbuild: "npm:^0.19.10"
@@ -448,6 +449,13 @@ __metadata:
   version: 1.0.5
   resolution: "@alwatr/tsconfig-base@npm:1.0.5"
   checksum: 5ef9c8bc91fd24dac416ac3599cd471dc7025fa4044aee6fe97910b83e84f11dbcea9251a03e7d142c4fd9e2cca92bbbc894433310fcbbe4405f402be3c1c56a
+  languageName: node
+  linkType: hard
+
+"@alwatr/type-helper@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@alwatr/type-helper@npm:1.0.3"
+  checksum: c70fec297df484b69acf5c25fa1acdecb1978daafd4ec52b81c28f343294180260dc9ee8eaead15f945f9e300c35dd43b8d6514ee25aecd332ee6fae289f4869
   languageName: node
   linkType: hard
 

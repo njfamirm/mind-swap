@@ -55,6 +55,7 @@
     "@alwatr/store-engine": "^5.0.0-beta",
     "@alwatr/tsconfig-base": "^1.0.5",
     "@alwatr/type": "^1.2.4",
+    "@alwatr/type-helper": "^1.0.3",
     "@alwatr/util": "^1.4.1",
     "@types/node": "^20.10.5",
     "esbuild": "^0.19.10",

@@ -2,7 +2,8 @@
 
 # Alwatr Admin User
 @userId = user_id
-@conversationId = chatcmpl-8cfViNwSJVh7iJcl85Ewle4DfBCBM
+@conversationId = chatcmpl-8dbGTMrnNQfyRMZHVkDkpbiFgbBDV
+
 
 ### api home
 GET {{apiUrl}}/
@@ -15,7 +16,7 @@ PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
 Content-Type: application/json
 
 {
-  "message": "Can you speak english?"
+  "message": "Hi, what can you do?"
 }
 
 ### Send a chat message
@@ -23,5 +24,29 @@ PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
 Content-Type: application/json
 
 {
-  "message": "How cna create openAI chatbot?"
+  "message": "create account with me for njfamirm user id"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "my user id is njfamirm"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Add note about I'm must call him after 2 hours"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Get list of my notes, send as markdown table"
 }
