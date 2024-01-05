@@ -1,5 +1,5 @@
 {
-  "name": "@alwatr/pmpa-api",
+  "name": "mind-swap-api",
   "version": "1.1.0",
   "description": "Alwatr Progressive Multi Page (Web) Application.",
   "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com>",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alwatr/pmpa",
+    "url": "https://github.com/njfamirm/mind-swap",
     "directory": "packages/api"
   },
-  "homepage": "https://github.com/Alwatr/pmpa#readme",
+  "homepage": "https://github.com/njfamirm/mind-swap#readme",
   "bugs": {
-    "url": "https://github.com/Alwatr/pmpa/issues"
+    "url": "https://github.com/njfamirm/mind-swap/issues"
   },
   "prettier": "@alwatr/prettier-config",
   "nano-build": {

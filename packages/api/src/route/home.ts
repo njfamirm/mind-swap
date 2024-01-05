@@ -5,7 +5,7 @@ import type {StringifyableRecord} from '@alwatr/type';
 nanoServer.route<StringifyableRecord>('GET', '/', () => ({
   ok: true,
   data: {
-    app: '..:: Alwatr PMPA API ::..',
+    app: '..:: Mind Swap API ::..',
     message: 'Hello ;)',
   },
 }));

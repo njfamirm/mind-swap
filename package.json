@@ -1,7 +1,7 @@
 {
-  "name": "@alwatr/pmpa-monorepo",
+  "name": "mind-swap-monorepo",
   "description": "Progressive Multi Page (Web) Application.",
-  "repository": "https://github.com/Alwatr/pmpa",
+  "repository": "https://github.com/njfamirm/mind-swap",
   "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com)",
   "license": "MIT",
   "type": "module",

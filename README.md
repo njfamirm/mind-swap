@@ -1,3 +1,3 @@
-# Alwatr PMPA
+# Mind Swap
 
-Progressive Multi Page (Web) Application.
+An AI chatbot designed to save notes, tasks, and ideas from your mind to your account.

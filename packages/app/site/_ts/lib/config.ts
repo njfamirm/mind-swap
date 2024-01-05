@@ -3,9 +3,9 @@ import {getLocalStorageItem} from '@alwatr/util';
 
 import type {ServerRequestConfig} from '@alwatr/server-context';
 
-definePackage('pmpa-app', '0.x');
+definePackage('mind-swap-app', '0.x');
 
-export const logger = createLogger('@alwatr/pmpa');
+export const logger = createLogger('mind-swap');
 
 /**
  * Debug API.

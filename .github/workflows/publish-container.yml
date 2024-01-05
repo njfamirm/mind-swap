@@ -16,11 +16,11 @@ on:
       - created
 
 env:
-  USER: alwatr
+  USER: njfamirm
 
 jobs:
   build:
-    if: github.repository_owner == 'Alwatr'
+    if: github.repository_owner == 'njfamirm'
 
     name: Build & Publish Containers
     runs-on: ubuntu-latest
@@ -29,10 +29,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: pmpa-app
+          - name: mind-swap-app
             path: ./packages/app
             context: .
-          - name: pmpa-api
+          - name: mind-swap-api
             path: ./packages/api
             context: .
 
@@ -99,9 +99,9 @@ jobs:
             type=semver,enable=true,pattern={{version}}
             type=ref,enable=true,event=branch
           labels: |
-            org.opencontainers.image.title="alwatr/${{matrix.name}}"
-            org.opencontainers.image.vendor="Alwatr"
-            org.opencontainers.image.documentation="https://github.com/Alwatr/pmpa"
+            org.opencontainers.image.title="${{matrix.name}}"
+            org.opencontainers.image.vendor="Njfamirm"
+            org.opencontainers.image.documentation="https://github.com/njfamirm/mind-swap"
             org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)"
 
       - name: 🚀 Build and push container image

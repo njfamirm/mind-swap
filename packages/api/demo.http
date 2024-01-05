@@ -1,9 +1,7 @@
 @apiUrl = http://localhost:8000/api/v0
 
-# Alwatr Admin User
 @userId = user_id
 @conversationId = chatcmpl-***
-
 
 ### api home
 GET {{apiUrl}}/

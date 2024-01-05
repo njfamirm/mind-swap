@@ -1,8 +1,8 @@
 import {createLogger, definePackage} from '@alwatr/logger';
 
-definePackage('pmpa-api', '0.x');
+definePackage('mind-swap-api', '0.x');
 
-export const logger = createLogger('@alwatr/pmpa-api');
+export const logger = createLogger('mind-swap-api');
 
 if (process.env.NODE_ENV === 'production') {
   if (process.env.STORAGE_TOKEN == null) {

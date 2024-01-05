@@ -1,5 +1,5 @@
 {
-  "name": "@alwatr/pmpa-app",
+  "name": "mind-swap-app",
   "version": "1.1.0",
   "description": "Alwatr Progressive Multi Page (Web) Application.",
   "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com>",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alwatr/pmpa",
+    "url": "https://github.com/njfamirm/mind-swap",
     "directory": "packages/app"
   },
-  "homepage": "https://github.com/Alwatr/pmpa#readme",
+  "homepage": "https://github.com/njfamirm/mind-swap#readme",
   "bugs": {
-    "url": "https://github.com/Alwatr/pmpa/issues"
+    "url": "https://github.com/njfamirm/mind-swap/issues"
   },
   "prettier": "@alwatr/prettier-config",
   "nano-build-development": {
@@ -36,7 +36,7 @@
     "start": "yarn run build && yarn run serve",
     "serve": "wds",
     "build": "yarn run build:11ty & yarn run build:es",
-    "build:es": "nano-build --preset=pmpa",
+    "build:es": "nano-build --preset=mind-swap",
     "build:11ty": "yarn node script/build.mjs",
     "watch": "yarn run watch:11ty & yarn run watch:es & yarn serve",
     "watch:es": "yarn run build:es --watch",
