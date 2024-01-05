@@ -5,6 +5,6 @@ import './lib/global-util';
 import './lib/keep-scroll';
 import './lib/type';
 
-logger.banner('@alwatr/pmpa');
+logger.banner('mind-swap');
 
 alpine.start();

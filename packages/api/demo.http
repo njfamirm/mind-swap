@@ -1,10 +1,50 @@
-@apiUrl = https://alwatr.ir/api/v0
+@apiUrl = http://localhost:8000/api/v0
 
-# Alwatr Admin User
 @userId = user_id
-@userToken = user_token
-
-@clientId = 2b6861f4-a8d7-4065-a5a5-3caa54b71a20
+@conversationId = chatcmpl-***
 
 ### api home
 GET {{apiUrl}}/
+
+### Create new conversation
+PUT {{apiUrl}}/conversation?userId={{userId}}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Hi, what can you do?"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "create account with me for njfamirm user id"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "my user id is njfamirm"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Add note about I'm must call him after 2 hours"
+}
+
+### Send a chat message
+PATCH {{apiUrl}}/chat?userId={{userId}}&conversationId={{conversationId}}
+Content-Type: application/json
+
+{
+  "message": "Get list of my notes, send as markdown table"
+}
