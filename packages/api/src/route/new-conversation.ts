@@ -41,6 +41,14 @@ nanoServer.route<StringifyableRecord>('PUT', '/conversation', async (connection)
     region: Region.PerUser,
   });
 
+  store.defineStoreFile({
+    name: 'note',
+    extension: StoreFileExtension.Json,
+    region: Region.PerUser,
+    type: StoreFileType.Collection,
+    ownerId: params.userId,
+  });
+
   conversationCollection.append(message);
 
   conversationCollection.save();
