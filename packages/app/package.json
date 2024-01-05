@@ -36,7 +36,7 @@
     "start": "yarn run build && yarn run serve",
     "serve": "wds",
     "build": "yarn run build:11ty & yarn run build:es",
-    "build:es": "nano-build --preset=mind-swap",
+    "build:es": "nano-build --preset=pmpa",
     "build:11ty": "yarn node script/build.mjs",
     "watch": "yarn run watch:11ty & yarn run watch:es & yarn serve",
     "watch:es": "yarn run build:es --watch",
