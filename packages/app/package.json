@@ -1,8 +1,8 @@
 {
   "name": "mind-swap-app",
-  "version": "1.1.0",
+  "version": "0.0.0",
   "description": "Alwatr Progressive Multi Page (Web) Application.",
-  "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com>",
+  "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com>",
   "private": true,
   "main": "main.js",
   "type": "module",

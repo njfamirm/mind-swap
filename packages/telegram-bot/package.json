@@ -1,5 +1,5 @@
 {
-  "name": "mind-swap-api",
+  "name": "mind-swap-telegram-bot",
   "version": "0.0.0",
   "description": "Alwatr Progressive Multi Page (Web) Application.",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com>",
@@ -22,7 +22,7 @@
   "prettier": "@alwatr/prettier-config",
   "nano-build": {
     "external": [
-      "openai"
+      "grammy"
     ]
   },
   "nano-build-development": {
@@ -59,8 +59,8 @@
     "@alwatr/util": "^1.4.1",
     "@types/node": "^20.10.5",
     "esbuild": "^0.19.10",
+    "grammy": "^1.20.2",
     "npm-run-all": "^4.1.5",
-    "openai": "^4.24.1",
     "typescript": "^5.3.3"
   }
 }

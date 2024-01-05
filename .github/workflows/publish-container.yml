@@ -35,6 +35,9 @@ jobs:
           - name: mind-swap-api
             path: ./packages/api
             context: .
+          - name: mind-swap-telegram-bot
+            path: ./packages/telegram-bot
+            context: .
 
     permissions:
       contents: read
@@ -102,7 +105,7 @@ jobs:
             org.opencontainers.image.title="${{matrix.name}}"
             org.opencontainers.image.vendor="Njfamirm"
             org.opencontainers.image.documentation="https://github.com/njfamirm/mind-swap"
-            org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)"
+            org.opencontainers.image.authors="S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://www.njfamirm.ir)"
 
       - name: 🚀 Build and push container image
         if: ${{ steps.file_change.outputs.container_folder != 'false' }}
