@@ -1,7 +1,88 @@
 import {Region, StoreFileExtension, StoreFileType} from '@alwatr/store-engine';
 
+
 import {logger} from './config';
 import {store} from './store';
+
+import type {ChatCompletionTool} from 'openai/resources/index.mjs';
+
+/**
+ * Tools for chat with AI
+ */
+export const chatToolList: ChatCompletionTool[] = [
+  {
+    type: 'function',
+    function: {
+      name: 'create_account',
+      description: 'At first user must create account to keep note on them',
+      parameters: {
+        type: 'object',
+        properties: {
+          userId: {
+            type: 'string',
+            description: "User id that's can be get from user, must don't use @ in them",
+          },
+        },
+        required: ['userId'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
+      name: 'delete_account',
+      description: 'Delete user if user want',
+      parameters: {
+        type: 'object',
+        properties: {
+          userId: {
+            type: 'string',
+            description: "User id that's can be get from user, must don't use @ in them",
+          },
+        },
+        required: ['userId'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
+      name: 'get_note_list',
+      description: 'Get user note from db and send them to user a as table',
+      parameters: {
+        type: 'object',
+        properties: {
+          userId: {
+            type: 'string',
+            description: "User id that's can be get from user, must don't use @ in them",
+          },
+        },
+        required: ['userId'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
+      name: 'add_note',
+      description: 'Get note from user and organize them and send plain text note ',
+      parameters: {
+        type: 'object',
+        properties: {
+          userId: {
+            type: 'string',
+            description: "User id that's can be get from user",
+          },
+          note: {
+            type: 'string',
+            description: 'Organized note from user in plain text',
+          },
+        },
+        required: ['userId', 'note'],
+      },
+    },
+  },
+];
 
 /**
  * Create account for user
@@ -30,7 +111,6 @@ export function createAccount(userId: string): string {
 
   return 'this account created before, so user can work with notes';
 }
-
 
 /**
  * Delete account for user

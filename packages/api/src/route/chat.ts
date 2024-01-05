@@ -2,86 +2,12 @@ import {Region} from '@alwatr/store-engine';
 
 import {chat} from '../lib/openai-api';
 import {nanoServer} from '../lib/server';
-import {store} from '../lib/store.js';
-import {handleToolCall} from '../lib/tool-handler.js';
+import {store} from '../lib/store';
+import {handleToolCall} from '../lib/tool-handler';
+import {chatToolList} from '../lib/tools';
 
 import type {AlwatrServiceResponse, StringifyableRecord} from '@alwatr/type';
-import type {ChatCompletionMessageParam, ChatCompletionTool} from 'openai/resources/index';
-
-const tools: ChatCompletionTool[] = [
-  {
-    type: 'function',
-    function: {
-      name: 'create_account',
-      description: 'At first user must create account to keep note on them',
-      parameters: {
-        type: 'object',
-        properties: {
-          userId: {
-            type: 'string',
-            description: "User id that's can be get from user, must don't use @ in them",
-          },
-        },
-        required: ['userId'],
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'delete_account',
-      description: 'Delete user if user want',
-      parameters: {
-        type: 'object',
-        properties: {
-          userId: {
-            type: 'string',
-            description: "User id that's can be get from user, must don't use @ in them",
-          },
-        },
-        required: ['userId'],
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'get_note_list',
-      description: 'Get user note from db and send them to user a as table',
-      parameters: {
-        type: 'object',
-        properties: {
-          userId: {
-            type: 'string',
-            description: "User id that's can be get from user, must don't use @ in them",
-          },
-        },
-        required: ['userId'],
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'add_note',
-      description: 'Get note from user and organize them and send plain text note ',
-      parameters: {
-        type: 'object',
-        properties: {
-          userId: {
-            type: 'string',
-            description: "User id that's can be get from user",
-          },
-          note: {
-            type: 'string',
-            description: 'Organized note from user in plain text',
-          },
-        },
-        required: ['userId', 'note'],
-      },
-    },
-  },
-];
+import type {ChatCompletionMessageParam} from 'openai/resources/index';
 
 /**
  * PATCH `/chat` Chat with the AI.
@@ -120,7 +46,7 @@ nanoServer.route<StringifyableRecord>('PATCH', '/chat', async (connection): Prom
 
   conversationCollection.append({role: 'user', content: body.message});
 
-  let response = await chat(conversationList(), 'gpt-3.5-turbo', tools);
+  let response = await chat(conversationList(), 'gpt-3.5-turbo', chatToolList);
   conversationCollection.append(response.choices[0].message);
 
   if (response.choices[0].finish_reason === 'tool_calls') {
@@ -143,7 +69,7 @@ nanoServer.route<StringifyableRecord>('PATCH', '/chat', async (connection): Prom
         tool_call_id: toolCall.id,
       });
 
-      response = await chat(conversationList(), 'gpt-3.5-turbo', tools);
+      response = await chat(conversationList(), 'gpt-3.5-turbo', chatToolList);
       conversationCollection.append(response.choices[0].message);
     }
   }

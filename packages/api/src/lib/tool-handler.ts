@@ -1,4 +1,4 @@
-import { addNote, createAccount, deleteAccount, getNoteList } from './tools.js';
+import {addNote, createAccount, deleteAccount, getNoteList} from './tools';
 
 import type {Dictionary} from '@alwatr/type-helper';
 
