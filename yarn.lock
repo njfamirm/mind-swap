@@ -153,9 +153,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@alwatr/eslint-config@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "@alwatr/eslint-config@npm:1.0.7"
+"@alwatr/dedupe@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@alwatr/dedupe@npm:1.0.1"
+  checksum: 639b608127d42503295b9b737f7e02fde8656dc032b0186f9101be939025b2bb1db851b534206ffa62c663ebcf52b4882f765a7a26a56abcd477a7317d893833
+  languageName: node
+  linkType: hard
+
+"@alwatr/eslint-config@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "@alwatr/eslint-config@npm:1.0.8"
   dependencies:
     esbuild: "npm:^0.19.11"
   peerDependencies:
@@ -164,7 +171,7 @@ __metadata:
     eslint: ">8.0.0"
     eslint-import-resolver-typescript: ">3.0.0"
     eslint-plugin-import: ">2.0.0"
-  checksum: 180e7383a1da059f2d71eea206e894d605a78a90d1223f8f1cdf97f4a9e7a6f7490656921db66da0b81286dbed85aeb5e20942e0bd1adfe2596f3b3862c49bc3
+  checksum: 0d8d0a226fdbee232af8f234b6a871d5aa45075dfe051c89b1bceac6cc64e7c507c6fe7ea51b778d0b5d1811b3d56d78a8c2002017c44782627fe429ac850197
   languageName: node
   linkType: hard
 
@@ -244,6 +251,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@alwatr/logger@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@alwatr/logger@npm:3.2.1"
+  dependencies:
+    "@alwatr/dedupe": "npm:^1.0.1"
+    "@alwatr/platform-info": "npm:^1.1.1"
+  checksum: a99f634ccd056550acde11c0ba3a57d5da6b9e74056386a2cdf1f386caa23e139f215ac4e6c31e0a5e9ae3962a4a201dd030e885af3ec88e16b33d494e6b5f11
+  languageName: node
+  linkType: hard
+
 "@alwatr/math@npm:^1.3.1":
   version: 1.3.1
   resolution: "@alwatr/math@npm:1.3.1"
@@ -272,6 +289,13 @@ __metadata:
     "@alwatr/math": "npm:^1.3.1"
     "@alwatr/util": "npm:^1.4.1"
   checksum: 2ef1514a54e50443907cfb0ceefa9ef26d055f47599cdd534d02ec3cb01e80250bd2c35eb142dde35f95a9a4c6044479ff21fc59dfe656891645bcf46605387c
+  languageName: node
+  linkType: hard
+
+"@alwatr/platform-info@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@alwatr/platform-info@npm:1.1.1"
+  checksum: 8c461aa604657d7bfe274e945e22d36697dae00f532162dab7cefc49b441f55a6071c3874b7b0c1b014b602874a2212c16b8f3d8bd1d56c1efffcaafb1cd360e
   languageName: node
   linkType: hard
 
@@ -7031,7 +7055,7 @@ __metadata:
   resolution: "mind-swap-api@workspace:packages/api"
   dependencies:
     "@alwatr/crypto": "npm:^3.0.4"
-    "@alwatr/logger": "npm:^2.4.1"
+    "@alwatr/logger": "npm:^3.2.1"
     "@alwatr/math": "npm:^1.3.1"
     "@alwatr/nano-build": "npm:^1.3.0"
     "@alwatr/nano-server": "npm:^1.2.7"
@@ -7062,7 +7086,7 @@ __metadata:
     "@alwatr/i18n": "npm:^2.0.3"
     "@alwatr/icon-set-extra": "npm:^0.4.0"
     "@alwatr/icon-set-material": "npm:^2.0.1"
-    "@alwatr/logger": "npm:^2.4.1"
+    "@alwatr/logger": "npm:^3.2.1"
     "@alwatr/nano-build": "npm:^1.3.0"
     "@alwatr/prettier-config": "npm:^1.0.4"
     "@alwatr/server-context": "npm:^1.2.6"
@@ -7089,7 +7113,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mind-swap-monorepo@workspace:."
   dependencies:
-    "@alwatr/eslint-config": "npm:^1.0.7"
+    "@alwatr/eslint-config": "npm:^1.0.8"
     "@alwatr/prettier-config": "npm:^1.0.4"
     "@alwatr/tsconfig-base": "npm:^1.1.0"
     "@lerna-lite/changed": "npm:^3.1.0"
@@ -7115,7 +7139,7 @@ __metadata:
   dependencies:
     "@alwatr/crypto": "npm:^3.0.4"
     "@alwatr/fetch": "npm:^2.2.1"
-    "@alwatr/logger": "npm:^2.4.1"
+    "@alwatr/logger": "npm:^3.2.1"
     "@alwatr/math": "npm:^1.3.1"
     "@alwatr/nano-build": "npm:^1.3.0"
     "@alwatr/nano-server": "npm:^1.2.7"

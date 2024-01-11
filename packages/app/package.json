@@ -52,7 +52,7 @@
     "@alwatr/i18n": "^2.0.3",
     "@alwatr/icon-set-extra": "^0.4.0",
     "@alwatr/icon-set-material": "^2.0.1",
-    "@alwatr/logger": "^2.4.1",
+    "@alwatr/logger": "^3.2.1",
     "@alwatr/nano-build": "^1.3.0",
     "@alwatr/prettier-config": "^1.0.4",
     "@alwatr/server-context": "^1.2.6",
