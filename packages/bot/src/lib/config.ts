@@ -1,8 +1,10 @@
-import {createLogger, definePackage} from '@alwatr/logger';
+import {definePackage} from '@alwatr/logger';
 
-definePackage('mind-swap-api', '0.x');
+import type {} from '@alwatr/nano-build';
 
-export const logger = createLogger('mind-swap-api');
+export const logger = definePackage('mind-swap-api', __package_version__);
+
+
 
 if (process.env.NODE_ENV === 'production') {
   if (process.env.BOT_TOKEN == null) {

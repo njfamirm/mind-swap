@@ -18,8 +18,9 @@ services:
       alwatr-public-network:
 
     environment:
-      # - NGINX_ACCESS_LOG=${appAccessLog:-}
-      - NGINX_FORCE_DOMAIN=${nginxForceDomain:-}
+      - NGINX_FORCE_DOMAIN=${appForceDomain:-}
+      - NGINX_ACCESS_LOG=${appAccessLog:-off}
+      - NGINX_DISALLOW_ROBOTS=${appNginxDisallowRobots:-}
 
     logging:
       driver: json-file
@@ -54,7 +55,7 @@ services:
       - STORAGE_HOST=${appId}-storage-api
       - STORAGE_PORT=80
       - STORAGE_TOKEN=${storageAccessToken}
-      - ALWATR_DEBUG=${apiDebug:-}
+      - DEBUG=${apiDebug:-}
 
     logging:
       driver: json-file
@@ -88,7 +89,7 @@ services:
     environment:
       - STORAGE_PATH=/data
       - ACCESS_TOKEN=${storageAccessToken}
-      - ALWATR_DEBUG=${storageApiDebug:-}
+      - DEBUG=${storageApiDebug:-}
 
     volumes:
       - type: bind
@@ -115,8 +116,8 @@ services:
     networks:
       alwatr-public-network:
 
-    # environment:
-    #   - NGINX_ACCESS_LOG=${storageAccessLog:-off}
+    environment:
+      - NGINX_ACCESS_LOG=${storageAccessLog:-off}
 
     volumes:
       - type: bind
