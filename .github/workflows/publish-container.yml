@@ -35,8 +35,8 @@ jobs:
           - name: mind-swap-api
             path: ./packages/api
             context: .
-          - name: mind-swap-telegram-bot
-            path: ./packages/telegram-bot
+          - name: mind-swap-bot
+            path: ./packages/bot
             context: .
 
     permissions:
