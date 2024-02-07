@@ -28,7 +28,7 @@ l10n.setLocale('auto');
 export function clearLocalStorage() {
   logger.logMethod?.('clearLocalStorage');
   localStorage.clear();
-  if (logger.devMode) {
+  if (logger.debugMode) {
     localStorage.setItem('alwatrDebug', '1');
   }
 }

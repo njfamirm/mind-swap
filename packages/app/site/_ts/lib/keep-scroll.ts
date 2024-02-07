@@ -24,4 +24,4 @@ async function keepScroll() {
   });
 }
 
-if (logger.devMode) keepScroll();
+if (logger.debugMode) keepScroll();
