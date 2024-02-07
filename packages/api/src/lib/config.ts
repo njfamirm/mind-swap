@@ -5,9 +5,10 @@ import type {} from '@alwatr/nano-build';
 export const logger = definePackage('@njfamirm/mind-swap-api', __package_version__);
 
 export const config = {
-  storeEngine: {
-    rootPath: './data',
+  store: {
+    rootPath: './db',
     defaultChangeDebounce: 50,
+    // errorWhenNotInitialized: true,
   },
 
   nanoServer: {

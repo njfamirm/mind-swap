@@ -5,7 +5,7 @@ import {store} from './store.js';
 const userCollectionId = {
   extension: StoreFileExtension.Json,
   name: 'user',
-  region: Region.SuperAdmin,
+  region: Region.Managers,
   type: StoreFileType.Collection,
 };
 
