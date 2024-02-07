@@ -1,4 +1,4 @@
-import {nanoServer} from '../lib/server';
+import {nanoServer} from '../lib/server.js';
 
 import type {StringifyableRecord} from '@alwatr/type';
 

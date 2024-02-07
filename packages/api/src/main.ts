@@ -1,7 +1,7 @@
-import {logger} from './lib/config';
-import './lib/openai-api';
-import './route/chat';
-import './route/home';
-import './route/new-conversation';
+import {logger} from './lib/config.js';
+import './lib/openai-api.js';
+import './route/chat.js';
+import './route/home.js';
+import './route/new-conversation.js';
 
 logger.banner('mind-swap-api');

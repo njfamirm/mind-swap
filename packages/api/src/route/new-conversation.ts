@@ -1,9 +1,8 @@
 import {Region, StoreFileExtension, StoreFileType} from '@alwatr/store-engine';
 
-
-import {chat} from '../lib/openai-api';
-import {nanoServer} from '../lib/server';
-import {store} from '../lib/store';
+import {chat} from '../lib/openai-api.js';
+import {nanoServer} from '../lib/server.js';
+import {store} from '../lib/store.js';
 
 import type {AlwatrServiceResponse, StringifyableRecord} from '@alwatr/type';
 import type {ChatCompletionMessageParam} from 'openai/resources/index.mjs';

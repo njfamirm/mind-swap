@@ -1,8 +1,7 @@
 import {Region} from '@alwatr/store-engine';
 
-
-import {logger} from './config';
-import {store} from './store';
+import {logger} from './config.js';
+import {store} from './store.js';
 
 import type {ChatCompletionTool} from 'openai/resources/index.mjs';
 

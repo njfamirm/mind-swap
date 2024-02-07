@@ -1,6 +1,6 @@
 import {l10n} from '@alwatr/i18n';
 
-import {logger} from './config';
+import {logger} from './config.js';
 
 logger.logModule?.('global-util');
 

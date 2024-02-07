@@ -1,4 +1,4 @@
-import {logger} from './config';
+import {logger} from './config.js';
 
 logger.logModule?.('register-service-worker');
 

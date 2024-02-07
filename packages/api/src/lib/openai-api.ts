@@ -1,8 +1,8 @@
 import {OpenAI} from 'openai';
 
-import {config, logger} from './config';
+import {config, logger} from './config.js';
 
-import type {Model} from '../type';
+import type {Model} from '../type.js';
 import type {ChatCompletion, ChatCompletionMessageParam, ChatCompletionTool} from 'openai/resources/chat/index';
 
 export const openai = new OpenAI({

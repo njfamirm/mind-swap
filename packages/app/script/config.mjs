@@ -37,7 +37,7 @@ function _eleventyConfig(config) {
   config.watchIgnores = ['site/_ts/'];
 
   // config.addFilter("slug", slugFilter);
-  config.addFilter("slugify", slugifyFilter);
+  config.addFilter('slugify', slugifyFilter);
 
   // Add pathPrefix manually to a URL
   config.addFilter('url', function addPathPrefix(url, pathPrefixOverride) {

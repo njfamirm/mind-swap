@@ -1,12 +1,9 @@
 {
   "extends": "@alwatr/tsconfig-base/tsconfig.json",
   "compilerOptions": {
-    "noEmit": true,
+    "noEmit": true
   },
   "files": [],
   "exclude": [],
-  "references": [
-    {"path": "./packages/api"},
-    {"path": "./packages/app"},
-  ]
+  "references": [{"path": "./packages/api"}, {"path": "./packages/app"}]
 }
