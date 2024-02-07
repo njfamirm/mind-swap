@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/njfamirm/mind-swap/compare/v0.1.0...v0.1.1) (2024-02-07)
+
+### Bug Fixes
+
+* store type ([e78117b](https://github.com/njfamirm/mind-swap/commit/e78117b55d3f8c84faf993bdc135bcd898fe9654)) by @
+
 ## [0.1.0](https://github.com/njfamirm/mind-swap/compare/v1.2.1...v0.1.0) (2024-02-07)
 
 ### Features
