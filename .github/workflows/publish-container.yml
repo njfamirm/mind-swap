@@ -29,9 +29,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: mind-swap-app
-            path: ./packages/app
-            context: .
           - name: mind-swap-api
             path: ./packages/api
             context: .

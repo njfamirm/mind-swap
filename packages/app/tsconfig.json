@@ -1,9 +1,0 @@
-{
-  "extends": "@alwatr/tsconfig-base/tsconfig.json",
-  "compilerOptions": {
-    "rootDir": "site/_ts",
-    // "outDir": "dist/es",
-    "noEmit": true
-  },
-  "include": ["site/_ts/**/*.ts"]
-}
