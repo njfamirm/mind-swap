@@ -1,42 +1,11 @@
 networks:
   internal:
-  alwatr-public-network:
-    name: alwatr-public-network
-    external: true
 
 services:
-  app:
-    image: $appImage
-
-    cpu_count: 1
-    cpu_shares: 1024
-    mem_limit: 256m
-
-    restart: unless-stopped
-
-    networks:
-      alwatr-public-network:
-
-    environment:
-      - NGINX_FORCE_DOMAIN=${appForceDomain:-}
-      - NGINX_ACCESS_LOG=${appAccessLog:-off}
-      - NGINX_DISALLOW_ROBOTS=${appNginxDisallowRobots:-}
-
-    logging:
-      driver: json-file
-      options:
-        max-size: '10m'
-        max-file: '2'
-
-    labels:
-      traefik.enable: true
-      traefik.port: 80
-      traefik.frontend.rule: Host:${domain}; PathPrefix:/;
-      traefik.frontend.entryPoints: http, https
-      traefik.frontend.redirect.entryPoint: https
-
   api:
     image: $apiImage
+
+    stop_grace_period: 30s
 
     cpu_count: 1
     cpu_shares: 1024
@@ -46,15 +15,9 @@ services:
 
     networks:
       internal:
-      alwatr-public-network:
-
-    depends_on:
-      - storage-api
 
     environment:
-      - STORAGE_HOST=${appId}-storage-api
-      - STORAGE_PORT=80
-      - STORAGE_TOKEN=${storageAccessToken}
+      - OPENAI_API_KEY=${openaiApiKey}
       - DEBUG=${apiDebug:-}
 
     logging:
@@ -63,78 +26,30 @@ services:
         max-size: '10m'
         max-file: '2'
 
-    labels:
-      traefik.enable: true
-      traefik.port: 80
-      traefik.frontend.rule: Host:${domain}; PathPrefix:/api/v1/;
-      traefik.frontend.entryPoints: http, https
-      traefik.frontend.redirect.entryPoint: https
+  bot:
+    image: $botImage
 
-  storage-api:
-    image: ghcr.io/alwatr/storage-api:4.0.2
+    stop_grace_period: 30s
 
     cpu_count: 1
     cpu_shares: 1024
     mem_limit: 256m
-
-    stop_grace_period: 30s
 
     restart: unless-stopped
 
     networks:
       internal:
-        aliases:
-          - '${appId}-storage-api'
+
+    depends_on:
+      - api
 
     environment:
-      - STORAGE_PATH=/data
-      - ACCESS_TOKEN=${storageAccessToken}
-      - DEBUG=${storageApiDebug:-}
-
-    volumes:
-      - type: bind
-        source: ./_data/storage
-        target: /data
-        bind:
-          create_host_path: true
+      - DEBUG=${botDebug:-}
+      - BOT_TOKEN=${botToken}
+      - CHAT_API_BASE_URL=${appId}-api
 
     logging:
       driver: json-file
       options:
         max-size: '10m'
         max-file: '2'
-
-  storage-nginx:
-    image: ghcr.io/alwatr/storage-nginx:4.0.2
-
-    cpu_count: 1
-    cpu_shares: 1024
-    mem_limit: 256m
-
-    restart: unless-stopped
-
-    networks:
-      alwatr-public-network:
-
-    environment:
-      - NGINX_ACCESS_LOG=${storageAccessLog:-off}
-
-    volumes:
-      - type: bind
-        source: ./_data/storage
-        target: /data
-        bind:
-          create_host_path: true
-
-    logging:
-      driver: json-file
-      options:
-        max-size: '10m'
-        max-file: '2'
-
-    labels:
-      traefik.enable: true
-      traefik.port: 80
-      traefik.frontend.rule: Host:${domain}; PathPrefixStrip:/api/v1/publistore/
-      traefik.frontend.entryPoints: http, https
-      traefik.frontend.redirect.entryPoint: https

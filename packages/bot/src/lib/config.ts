@@ -4,8 +4,6 @@ import type {} from '@alwatr/nano-build';
 
 export const logger = definePackage('mind-swap-api', __package_version__);
 
-
-
 if (process.env.NODE_ENV === 'production') {
   if (process.env.BOT_TOKEN == null) {
     throw new Error('BOT_TOKEN is required in production');
@@ -24,11 +22,6 @@ export const config = {
 
   chatApi: {
     baseUrl: process.env.CHAT_API_BASE_URL,
-    token: process.env.CHAT_API_TOKEN,
-  },
-
-  botMessage: {
-    start: 'hi!',
   },
 } as const;
 
