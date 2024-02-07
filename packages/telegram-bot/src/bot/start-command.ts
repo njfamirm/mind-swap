@@ -1,7 +1,7 @@
-import {serviceRequest} from '@alwatr/fetch';
+import {fetchJson} from '@alwatr/fetch';
 
-import {bot} from '../lib/bot';
-import {config, logger} from '../lib/config';
+import {bot} from '../lib/bot.js';
+import {config, logger} from '../lib/config.js';
 import {userCollection} from '../lib/user.js';
 
 import type {AlwatrServiceResponse} from '@alwatr/type';
@@ -20,7 +20,7 @@ bot.command('start', async (ctx) => {
 
   if (!userCollection.exists(ctx.from.id)) {
     const message = await ctx.reply('Initializing Yo Mind Swap account 🧠');
-    const response = await serviceRequest<AlwatrServiceResponse<{conversationId: string}>>({
+    const response = await fetchJson<AlwatrServiceResponse<{conversationId: string}>>({
       url: config.chatApi.baseUrl + '/conversation',
       method: 'PUT',
       timeout: 60_000,
