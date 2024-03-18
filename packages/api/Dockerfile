@@ -14,7 +14,7 @@ RUN set -eux; \
 # ---
 
 FROM ghcr.io/alwatr/node:20.11.1
-LABEL org.opencontainers.image.base.name="ghcr.io/alwatr/node:20.10.0"
+LABEL org.opencontainers.image.base.name="ghcr.io/alwatr/node:20.11.1"
 
 COPY --from=builder /app/packages/api/dist/ .
 # RUN set -eux; ls -RlahF /app;
