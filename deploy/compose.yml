@@ -44,9 +44,10 @@ services:
       - api
 
     environment:
+      - botToken=${botToken}
+      - apiBaseUrl=${appId}-api
+      - storeEngineRootPath=/data
       - DEBUG=${botDebug:-}
-      - BOT_TOKEN=${botToken}
-      - CHAT_API_BASE_URL=${appId}-api
 
     logging:
       driver: json-file

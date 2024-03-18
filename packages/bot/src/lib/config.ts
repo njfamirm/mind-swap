@@ -2,26 +2,36 @@ import {definePackage} from '@alwatr/logger';
 
 import type {} from '@alwatr/nano-build';
 
-export const logger = definePackage('mind-swap-api', __package_version__);
+export const logger = definePackage('@njfamirm/mind-swap-bot', __package_version__);
+
+if (process.env.botToken == null) {
+  throw new Error('botToken is required.');
+}
+
+const apiBaseUrl = process.env.apiBaseUrl
+if (apiBaseUrl == null) {
+  throw new Error('apiBaseUrl is required.');
+}
 
 if (process.env.NODE_ENV === 'production') {
-  if (process.env.BOT_TOKEN == null) {
-    throw new Error('BOT_TOKEN is required in production');
+  if (process.env.storeEngineRootPath == null) {
+    throw new Error('storeEngineRootPath is required in production.');
   }
 }
 
 export const config = {
   storeEngine: {
-    rootPath: './db',
+    rootPath: process.env.storeEngineRootPath ?? './data',
     defaultChangeDebounce: 50,
   },
 
   bot: {
-    token: process.env.BOT_TOKEN as string,
+    token: process.env.botToken as string,
   },
 
-  chatApi: {
-    baseUrl: process.env.CHAT_API_BASE_URL,
+  api: {
+    newConversation: apiBaseUrl + '/conversation',
+    chat: apiBaseUrl + '/chat',
   },
 } as const;
 

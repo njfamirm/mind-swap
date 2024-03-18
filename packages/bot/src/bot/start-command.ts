@@ -19,9 +19,9 @@ bot.command('start', async (ctx) => {
   if (ctx.from == null) return;
 
   if (!userCollection.exists(ctx.from.id)) {
-    const message = await ctx.reply('Initializing Yo Mind Swap account 🧠');
+    const message = await ctx.reply('Initializing Your Mind Swap account 🧠');
     const response = await fetchJson<AlwatrServiceResponse<{conversationId: string}>>({
-      url: config.chatApi.baseUrl + '/conversation',
+      url: config.api.newConversation,
       method: 'PUT',
       timeout: 60_000,
       retry: 0,
@@ -30,7 +30,7 @@ bot.command('start', async (ctx) => {
       },
     });
 
-    if (!response.ok) {
+    if (response.ok === false) {
       logger.error('command-start', 'create_conversation_failed');
       return;
     }

@@ -13,7 +13,7 @@ bot.on('message', async (ctx) => {
 
   const message = await ctx.reply('🧠 Processing...');
   const response = await fetchJson<AlwatrServiceResponse<{content: string; role: string}>>({
-    url: config.chatApi.baseUrl + '/chat',
+    url: config.api.chat,
     method: 'PATCH',
     timeout: 60_000,
     retry: 0,

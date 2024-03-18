@@ -6,7 +6,7 @@ export const logger = definePackage('@njfamirm/mind-swap-api', __package_version
 
 export const config = {
   store: {
-    rootPath: './db',
+    rootPath: './data',
     defaultChangeDebounce: 50,
     // errorWhenNotInitialized: true,
   },
