@@ -9,7 +9,7 @@ updates:
       prefix: deps
       include: scope
     reviewers:
-      - AliMD
+      - njfamirm
     schedule:
       interval: weekly
       time: '10:30'
@@ -31,7 +31,7 @@ updates:
       prefix: deps
       include: scope
     reviewers:
-      - AliMD
+      - njfamirm
     schedule:
       interval: weekly
       time: '10:30'
@@ -60,7 +60,7 @@ updates:
   - package-ecosystem: docker
     directory: /packages/app
     reviewers:
-      - AliMD
+      - njfamirm
     schedule:
       interval: weekly
       time: '10:30'
@@ -73,7 +73,20 @@ updates:
   - package-ecosystem: docker
     directory: /packages/api
     reviewers:
-      - AliMD
+      - njfamirm
+    schedule:
+      interval: weekly
+      time: '10:30'
+      day: thursday
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+
+  - package-ecosystem: docker
+    directory: /packages/bot
+    reviewers:
+      - njfamirm
     schedule:
       interval: weekly
       time: '10:30'
