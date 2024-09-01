@@ -57,9 +57,9 @@
     "@alwatr/type": "^1.2.4",
     "@alwatr/type-helper": "^1.2.1",
     "@alwatr/util": "^1.4.1",
-    "@types/node": "^20.11.28",
-    "esbuild": "^0.20.2",
-    "openai": "^4.29.1",
-    "typescript": "^5.4.2"
+    "@types/node": "^22.5.1",
+    "esbuild": "^0.23.1",
+    "openai": "^4.57.0",
+    "typescript": "^5.5.4"
   }
 }
