@@ -1,4 +1,4 @@
-FROM ghcr.io/alwatr/node:20.11.1 as builder
+FROM ghcr.io/alwatr/node:21.7.1 as builder
 
 RUN apk add --no-cache git
 RUN set -ex; corepack enable;
@@ -13,7 +13,7 @@ RUN set -eux; \
 
 # ---
 
-FROM ghcr.io/alwatr/node:20.11.1
+FROM ghcr.io/alwatr/node:21.7.1
 LABEL org.opencontainers.image.base.name="ghcr.io/alwatr/node:20.11.1"
 
 COPY --from=builder /app/packages/api/dist/ .
